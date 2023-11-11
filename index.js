@@ -23,6 +23,7 @@ const options = {
 let status = "N";
 
 bot.onText(/\/startbot/, msg =>{
+  console.log("bot started")
 let interval = setInterval(()=>{
   userID = msg.chat.id;
   request.get(options, (error, response, body) => {
@@ -33,9 +34,13 @@ let interval = setInterval(()=>{
       if(JSON.parse(body) == "N" && status == "A"){
         bot.sendVoice(userID, `audio\\vidbiy.mp3`)
         status = "N";
+        console.log("Raid alert ended")
       } else if(JSON.parse(body) == "A" && status == "N"){
         bot.sendVoice(userID, `audio\\trivoga.mp3`)
         status = "A";
+        console.log("Raid alert started")
+      } else{
+        console.log("Nothing has changed")
       }
   });
 }, 30000);
