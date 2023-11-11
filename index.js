@@ -32,11 +32,11 @@ let interval = setInterval(()=>{
         return;
       }
       if(JSON.parse(body) == "N" && status == "A"){
-        bot.sendVoice(userID, `\\audio\\vidbiy.mp3`)
+        bot.sendVoice(userID, `https://github.com/CPTshkarpetka/tryvoga_bot/blob/main/audio/vidbiy.mp3`)
         status = "N";
         console.log("Raid alert ended")
       } else if(JSON.parse(body) == "A" && status == "N"){
-        bot.sendVoice(userID, `audio\\trivoga.mp3`)
+        bot.sendVoice(userID, `https://github.com/CPTshkarpetka/tryvoga_bot/blob/main/audio/trivoga.mp3`)
         status = "A";
         console.log("Raid alert started")
       } else{
