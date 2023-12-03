@@ -5,7 +5,7 @@ const tokenTG = process.env.TOKEN;
 
 var bot = new TelegramBot(tokenTG, {webHook:{
   host:"0.0.0.0",
-  port: process.env.PORT || 5000
+  port: process.env.PORT || 8080
 }});
 
 bot.setWebHook(process.env.URL);
